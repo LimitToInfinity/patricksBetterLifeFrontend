@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", postLoad);
 
-const baseURL = "http://localhost:3000/"
-const usersURL = "http://localhost:3000/users/"
-const eventsURL = "http://localhost:3000/events/"
+const baseURL = "http://localhost:3000/";
+const usersURL = "http://localhost:3000/users/";
+const eventsURL = "http://localhost:3000/events/";
+
+let eventsSection;
 
 function postLoad() {
+    eventsSection = document.querySelector(".events");
+
     fetch(eventsURL)
         .then(parseJSON)
         .then(extractData)
@@ -22,7 +26,7 @@ function displayEvent(event) {
     eventName.textContent = event.name;
     eventDescription.textContent = event.description;
 
-    eventCard.append(eventName, eventDescription, deleteButton);
+    eventCard.append(eventName, eventDescription);
 
     eventsSection.append(eventCard);
 }
