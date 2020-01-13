@@ -82,5 +82,17 @@ h1 {
 .event > button {
     margin-top: 3rem;
     border-radius: 5px;
+}
+
+.update {
     background-color: skyblue;
+    margin-right: 1rem;
+}
+
+.delete {
+    background-color: firebrick;
+}
+
+.invisible {
+    display: none;
 }
